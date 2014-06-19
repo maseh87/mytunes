@@ -16,12 +16,19 @@ var AppModel = Backbone.Model.extend({
 
 
     //this is fired when the SongModel play method is ran
+
+
     params.library.on('play', function(song){
       this.set('currentSong', song);
     }, this),
 
+    // params.library.on('end', function(song) {
+    //   this.set('currentSong')//to the next song in the queue
+    // }, this),
+
     params.library.on('enqueue', function(song){
       this.get('songQueue').add(song);
+      console.log(this.get('songQueue').pop());
     }, this);
   }
 

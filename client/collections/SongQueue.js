@@ -3,6 +3,4 @@ var SongQueue = Songs.extend({
 
 
 
-
-
 });
