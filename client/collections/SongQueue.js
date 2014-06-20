@@ -3,7 +3,7 @@ var SongQueue = Songs.extend({
 
 
   initialize: function(song) {
-    // this.on('add', this._enqueue(song),this),
+
     this.on('add', function(){
       if(this.length === 1){
         this.playFirst();
@@ -12,7 +12,6 @@ var SongQueue = Songs.extend({
 
     this.on('ended', function(song) {
       this.shift();
-      song.attributes.count++;
       if(this.length){
         this.playFirst();
       }
